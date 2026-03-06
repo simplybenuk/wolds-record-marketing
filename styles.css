@@ -10,6 +10,9 @@
   --focus: #1d4ed8;
   --radius: 0.85rem;
   --shadow: 0 8px 28px rgba(22, 49, 42, 0.08);
+  --eyebrow-text: #285543;
+  --eyebrow-bg: #dfebe5;
+  --eyebrow-border: var(--border);
 }
 
 * {
@@ -137,9 +140,9 @@ h2 {
   font-size: 0.85rem;
   letter-spacing: 0.02em;
   font-weight: 700;
-  color: #285543;
-  background: #dfebe5;
-  border: 1px solid #bdd1c8;
+  color: var(--eyebrow-text);
+  background: var(--eyebrow-bg);
+  border: 1px solid var(--eyebrow-border);
   border-radius: 100px;
   padding: 0.15rem 0.6rem;
 }
