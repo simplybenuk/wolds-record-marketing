@@ -5,6 +5,10 @@
   --text: #122a24;
   --text-soft: #35524a;
   --border: #cbddd4;
+  --border-soft: #d5e4dc;
+  --border-subtle: #d6e6df;
+  --border-muted: #d8e6df;
+  --border-footer: #dbe8e2;
   --primary: #1f6d53;
   --primary-hover: #18533f;
   --focus: #1d4ed8;
@@ -56,7 +60,7 @@ a {
 
 .muted {
   background: linear-gradient(180deg, #f7fbf9, var(--surface-muted));
-  border-block: 1px solid #d8e6df;
+  border-block: 1px solid var(--border-muted);
 }
 
 .skip-link {
@@ -230,7 +234,7 @@ summary:focus-visible {
 }
 
 .hero-stats li {
-  border: 1px solid #d5e4dc;
+  border: 1px solid var(--border-soft);
   border-radius: var(--radius-sm);
   background: rgba(255, 255, 255, 0.8);
   padding: 0.7rem 0.8rem;
@@ -250,7 +254,7 @@ summary:focus-visible {
 .inline-visual {
   margin: 0;
   padding: 0.9rem;
-  border: 1px solid #d6e6df;
+  border: 1px solid var(--border-subtle);
   border-radius: calc(var(--radius) + 0.2rem);
   background: rgba(255, 255, 255, 0.92);
   box-shadow: var(--shadow-strong);
@@ -316,7 +320,7 @@ summary {
 }
 
 .site-footer {
-  border-top: 1px solid #dbe8e2;
+  border-top: 1px solid var(--border-footer);
   background: var(--surface);
   padding: 2.7rem 0;
 }
