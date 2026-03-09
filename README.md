@@ -14,6 +14,16 @@ Then open <http://localhost:8000>.
 
 If you see a blank or white page, make sure you are opening the local server URL above (not a file preview tool that doesn't render static assets correctly).
 
+## Build legal pages from markdown
+
+Legal page source files live in `legal/privacy.md` and `legal/terms.md`.
+
+Generate branded static HTML pages at `/privacy/index.html` and `/terms/index.html` with:
+
+```bash
+npm run build:legal
+```
+
 ## Deploy to GitHub Pages
 
 1. Push this repository to GitHub.
