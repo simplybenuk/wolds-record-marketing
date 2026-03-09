@@ -25,9 +25,6 @@ We use data to:
 
 We do not sell personal information. We may share data with trusted service providers that help us run the platform (for example, hosting or billing providers), under appropriate safeguards.
 
-## Data security
-
-
 ### Service Providers
 
 We use trusted third-party service providers to operate and improve the service.
@@ -37,6 +34,8 @@ These include:
 - Supabase – database and authentication infrastructure
 - Vercel – application hosting and Web Analytics
 - Stripe – payment processing
+
+## Data security
 
 We use reasonable technical and organisational measures to protect your information.
 For security disclosures, contact [security@woldsrecord.com](mailto:security@woldsrecord.com).
