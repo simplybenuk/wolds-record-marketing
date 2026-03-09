@@ -360,3 +360,29 @@ summary {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 }
+
+.legal-content {
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface);
+  box-shadow: var(--shadow-soft);
+  padding: clamp(1.25rem, 3vw, 2rem);
+}
+
+.legal-content h1 {
+  font-size: clamp(1.8rem, 4.5vw, 2.4rem);
+}
+
+.legal-content h2 {
+  margin-top: 1.5rem;
+  font-size: clamp(1.15rem, 2.4vw, 1.45rem);
+}
+
+.legal-content p,
+.legal-content li {
+  color: var(--text-soft);
+}
+
+.legal-content ul {
+  padding-left: 1.2rem;
+}

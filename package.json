@@ -1,0 +1,7 @@
+{
+  "name": "wolds-record-marketing",
+  "private": true,
+  "scripts": {
+    "build:legal": "node scripts/build-legal-pages.mjs"
+  }
+}
