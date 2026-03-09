@@ -90,14 +90,14 @@ const markdownToHtml = (markdown) => {
   return chunks.join('\n');
 };
 
-const buildPageHtml = ({ title, bodyHtml }) => `<!doctype html>
+const buildPageHtml = ({ title, bodyHtml, slug, siteUrl }) => `<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Wolds Record | ${title}</title>
     <meta name="robots" content="index,follow" />
-    <link rel="canonical" href="https://placeholder-domain.example/${title === 'Privacy Policy' ? 'privacy' : 'terms'}" />
+    <link rel="canonical" href="${siteUrl}/${slug}" />
     <link rel="stylesheet" href="/styles.css" />
   </head>
   <body>
@@ -128,10 +128,12 @@ const buildPageHtml = ({ title, bodyHtml }) => `<!doctype html>
 `;
 
 const buildAllLegalPages = async () => {
-  for (const page of Object.values(pageMap)) {
+  const siteUrl = (process.env.SITE_URL || 'https://placeholder-domain.example').replace(/\/$/, '');
+
+  for (const [slug, page] of Object.entries(pageMap)) {
     const markdown = await fs.readFile(page.source, 'utf8');
     const bodyHtml = markdownToHtml(markdown);
-    const fullHtml = buildPageHtml({ title: page.title, bodyHtml });
+    const fullHtml = buildPageHtml({ title: page.title, bodyHtml, slug, siteUrl });
 
     await fs.mkdir(page.outputDir, { recursive: true });
     await fs.writeFile(path.join(page.outputDir, 'index.html'), fullHtml, 'utf8');
