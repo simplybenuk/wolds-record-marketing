@@ -24,11 +24,18 @@ const escapeHtml = (value) =>
   value
     .replaceAll('&', '&amp;')
     .replaceAll('<', '&lt;')
-    .replaceAll('>', '&gt;');
+    .replaceAll('>', '&gt;')
+    .replaceAll('\"', '&quot;')
+    .replaceAll("'", '&#39;');
+
+const isSafeHref = (href) => /^(https?|mailto):/i.test(href) || href.startsWith('/') || href.startsWith('#');
 
 const parseInlineMarkdown = (line) => {
   let html = escapeHtml(line);
-  html = html.replace(/\[(.+?)\]\((.+?)\)/g, '<a href="$2">$1</a>');
+  html = html.replace(/\[(.+?)\]\((.+?)\)/g, (_match, text, url) => {
+    const href = url.trim();
+    return isSafeHref(href) ? `<a href="${href}">${text}</a>` : `<span>${text} (${href})</span>`;
+  });
   html = html.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
   html = html.replace(/\*(.+?)\*/g, '<em>$1</em>');
   html = html.replace(/_(.+?)_/g, '<em>$1</em>');
