@@ -102,6 +102,21 @@ a {
   letter-spacing: 0.01em;
 }
 
+.brand-link {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.brand-logo {
+  display: block;
+  width: auto;
+  height: clamp(1.9rem, 3.5vw, 2.35rem);
+  max-height: 2.35rem;
+}
+
 .nav-links,
 .footer-links {
   display: flex;
@@ -335,6 +350,19 @@ summary {
   .nav-wrap {
     flex-wrap: wrap;
     padding: 0.65rem 0;
+  }
+
+  .nav-wrap > nav {
+    order: 2;
+    width: 100%;
+  }
+
+  .nav-links {
+    gap: 0.8rem;
+  }
+
+  .nav-wrap > .button {
+    order: 3;
   }
 }
 
