@@ -114,7 +114,6 @@ a {
   display: block;
   width: auto;
   height: clamp(1.9rem, 3.5vw, 2.35rem);
-  max-height: 2.35rem;
 }
 
 .nav-links,
