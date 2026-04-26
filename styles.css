@@ -112,7 +112,7 @@ a {
 }
 
 .brand-wordmark {
-  font-size: clamp(1.05rem, 2.8vw, 1.4rem);
+  font-size: clamp(1rem, 2.4vw, 1.25rem);
   font-weight: 700;
   color: var(--text);
   white-space: nowrap;
@@ -126,6 +126,10 @@ a {
 
 .site-header .brand-logo {
   height: clamp(2.25rem, 5.2vw, 2.8rem);
+}
+
+.site-header .brand-wordmark {
+  font-size: clamp(0.9rem, 2.2vw, 1.15rem);
 }
 
 .nav-links,
@@ -376,9 +380,6 @@ summary {
     order: 1;
   }
 
-  .site-header .brand-wordmark {
-    font-size: 1.15rem;
-  }
 }
 
 @media (min-width: 48rem) {
