@@ -17,6 +17,11 @@ const pageMap = {
     source: path.join(legalDir, 'terms.md'),
     outputDir: path.join(rootDir, 'terms'),
     title: 'Terms and Conditions'
+  },
+  'cookie-policy': {
+    source: path.join(legalDir, 'cookie-policy.md'),
+    outputDir: path.join(rootDir, 'cookie-policy'),
+    title: 'Cookie Policy'
   }
 };
 

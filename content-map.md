@@ -34,4 +34,4 @@
 - **Purpose:** Provide trust, legal links, and support/contact paths.
 - **Headline:** Wolds Record (brand/footer identifier).
 - **Supporting copy:** Brief trust-oriented line plus copyright.
-- **CTA text:** Privacy Policy, Terms and Conditions, Knowledge Base, Contact.
+- **CTA text:** Privacy Policy, Terms and Conditions, Cookie Policy, Knowledge Base, Contact.

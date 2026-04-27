@@ -1,8 +1,10 @@
 # Terms and Conditions
 
-_Last updated: 2026-03-09_
+_Last updated: 2026-04-27_
 
 These Terms and Conditions ("Terms") govern your use of Wolds Record provided by Wolds Canine Ltd.
+
+These Terms apply to both the marketing website (woldsrecord.com) and the application (app.woldsrecord.com).
 
 ## Service use
 
@@ -20,6 +22,10 @@ We aim to provide reliable service but do not guarantee uninterrupted availabili
 
 If paid plans are introduced, applicable fees and billing terms will be presented before purchase.
 
+## Communications
+
+By using the service, you agree that we may send essential system-generated emails related to your account and service operation.
+
 ## Intellectual property
 
 All platform content and software are owned by Wolds Canine Ltd or its licensors.
@@ -32,10 +38,12 @@ To the extent permitted by law, Wolds Canine Ltd is not liable for indirect or c
 
 We may update these Terms from time to time. Continued use of the service after changes take effect means you accept the updated Terms.
 
-
 ## Analytics
 
-We use Vercel Web Analytics to understand aggregate traffic and improve product and marketing performance.
+We use different analytics providers depending on context:
+
+- Google Analytics 4 (GA4) on the marketing website
+- PostHog in the application
 
 ## Contact
 
