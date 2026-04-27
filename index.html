@@ -104,7 +104,11 @@
             <li><a href="#faq">FAQ</a></li>
           </ul>
         </nav>
-        <a class="button button-secondary" href="https://app.woldsrecord.com">Sign In</a>
+        <a class="button button-secondary"
+           href="https://app.woldsrecord.com"
+           onclick="trackEvent('cta_click_sign_in')">
+           Sign In
+        </a>
       </div>
     </header>
 
@@ -118,8 +122,16 @@
               Manage dogs, owners, sessions, and treatment notes in one simple workflow. Track progress over time, stay ready for follow-up, and generate clear vet-ready reports when needed.
             </p>
             <div class="cta-group">
-              <a class="button button-primary" href="https://app.woldsrecord.com">Join Free</a>
-              <a class="button button-secondary" href="https://app.woldsrecord.com">Sign In</a>
+              <a class="button button-primary" 
+                 href="https://app.woldsrecord.com"
+                 onclick="trackEvent('cta_click_join_free')">
+                 Join Free
+              </a>
+              <a class="button button-secondary"
+                 href="https://app.woldsrecord.com"
+                 onclick="trackEvent('cta_click_sign_in')">
+                 Sign In
+              </a>
             </div>
             <ul class="hero-stats" aria-label="Key platform highlights">
               <li><strong>Dog, owner, and session records</strong><span>Everything in one clear timeline</span></li>
@@ -267,6 +279,13 @@
 
     <script>
       document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+    <script>
+      function trackEvent(name) {
+        if (typeof gtag === 'function') {
+          gtag('event', name);
+        }
+      }
     </script>
   </body>
 </html>
