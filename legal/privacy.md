@@ -1,12 +1,17 @@
 # Privacy Policy
 
-_Last updated: 2026-03-09_
+_Last updated: 2026-04-27_
 
 Wolds Canine Ltd ("Wolds Record", "we", "us", "our") respects your privacy and is committed to protecting your personal information.
 
+This Privacy Policy applies to both:
+
+- the Wolds Record marketing website (woldsrecord.com)
+- the Wolds Record application (app.woldsrecord.com)
+
 ## Information we collect
 
-We collect information needed to operate and support the service, including:
+We collect information needed to operate and support our website and application, including:
 
 - Account details (such as name and email address)
 - Usage and diagnostic data
@@ -17,23 +22,34 @@ We collect information needed to operate and support the service, including:
 We use data to:
 
 - Provide and maintain Wolds Record
-- Improve service quality and reliability
+- Improve service quality, reliability, and product experience
 - Respond to support requests
+- Send system-generated service communications
 - Meet legal and compliance obligations
 
 ## Data sharing
 
-We do not sell personal information. We may share data with trusted service providers that help us run the platform (for example, hosting or billing providers), under appropriate safeguards.
+We do not sell personal information. We may share data with trusted service providers that help us run the platform under appropriate safeguards.
 
 ### Service Providers
 
-We use trusted third-party service providers to operate and improve the service.
-
-These include:
+We use trusted third-party providers, including:
 
 - Supabase – database and authentication infrastructure
-- Vercel – application hosting and Web Analytics
+- Vercel – hosting infrastructure
 - Stripe – payment processing
+- Resend – system-generated transactional emails
+- Google Analytics 4 (GA4) – marketing website analytics (with consent)
+- PostHog – product analytics in the application
+
+## Analytics
+
+Analytics tools are used in different contexts:
+
+- Marketing site analytics: Google Analytics 4 (GA4)
+- Application analytics: PostHog
+
+Where required, analytics are controlled through consent settings.
 
 ## Data security
 
@@ -46,4 +62,4 @@ Depending on your location, you may have rights to access, correct, or delete yo
 
 ## Contact
 
-For privacy questions, contact us at [privacy@woldsrecord.com](mailto:privacy@woldsrecord.com) or [hello@woldsrecord.com](mailto:hello@woldsrecord.com).
+For privacy questions, contact [privacy@woldsrecord.com](mailto:privacy@woldsrecord.com) or [hello@woldsrecord.com](mailto:hello@woldsrecord.com).
