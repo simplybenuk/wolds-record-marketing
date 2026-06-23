@@ -1,8 +1,8 @@
 # Terms and Conditions
 
-_Last updated: 2026-04-27_
+_Last updated: 2026-06-23_
 
-These Terms and Conditions ("Terms") govern your use of Wolds Record provided by Wolds Canine Ltd.
+These Terms and Conditions ("Terms") govern your use of Wolds Record provided by Benjamin Whitfield-Heap, trading as Wolds Record.
 
 These Terms apply to both the marketing website (woldsrecord.com) and the application (app.woldsrecord.com).
 
@@ -28,11 +28,11 @@ By using the service, you agree that we may send essential system-generated emai
 
 ## Intellectual property
 
-All platform content and software are owned by Wolds Canine Ltd or its licensors.
+All platform content and software are owned by Benjamin Whitfield-Heap, trading as Wolds Record or its licensors.
 
 ## Limitation of liability
 
-To the extent permitted by law, Wolds Canine Ltd is not liable for indirect or consequential losses arising from use of the service.
+To the extent permitted by law, Benjamin Whitfield-Heap, trading as Wolds Record is not liable for indirect or consequential losses arising from use of the service.
 
 ## Changes to these terms
 

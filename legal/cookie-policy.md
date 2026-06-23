@@ -1,8 +1,8 @@
 # Cookie Policy
 
-_Last updated: 2026-04-27_
+_Last updated: 2026-06-23_
 
-This Cookie Policy explains how Wolds Canine Ltd ("Wolds Record", "we", "us", "our") uses cookies and similar technologies on:
+This Cookie Policy explains how Benjamin Whitfield-Heap, trading as Wolds Record ("Wolds Record", "we", "us", "our") uses cookies and similar technologies on:
 
 - woldsrecord.com (marketing site)
 - app.woldsrecord.com (application)

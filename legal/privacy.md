@@ -1,8 +1,8 @@
 # Privacy Policy
 
-_Last updated: 2026-04-27_
+_Last updated: 2026-06-23_
 
-Wolds Canine Ltd ("Wolds Record", "we", "us", "our") respects your privacy and is committed to protecting your personal information.
+Benjamin Whitfield-Heap, trading as Wolds Record ("Wolds Record", "we", "us", "our") respects your privacy and is committed to protecting your personal information.
 
 This Privacy Policy applies to both:
 

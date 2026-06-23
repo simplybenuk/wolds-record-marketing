@@ -128,7 +128,7 @@ const buildPageHtml = ({ title, bodyHtml, slug, siteUrl }) => `<!doctype html>
 
     <footer class="site-footer" aria-label="Footer">
       <div class="container footer-wrap">
-        <p class="small">&copy; <span id="year"></span> Wolds Canine Ltd. All rights reserved.</p>
+        <p class="small">&copy; <span id="year"></span> Benjamin Whitfield-Heap, trading as Wolds Record. All rights reserved.</p>
       </div>
     </footer>
 
