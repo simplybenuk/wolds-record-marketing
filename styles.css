@@ -523,6 +523,7 @@ summary {
 .founding-page .field {
   display: grid;
   gap: 0.35rem;
+  align-content: start;
   margin: 0;
   padding: 0;
   border: 0;
@@ -661,4 +662,9 @@ summary {
   .founding-page .steps {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
+}
+
+.founding-page .hint {
+  font-size: 0.85rem;
+  color: var(--text-soft);
 }
