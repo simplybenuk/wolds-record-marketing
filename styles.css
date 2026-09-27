@@ -508,6 +508,11 @@ summary {
 }
 
 /* Form */
+/* Let the hidden attribute win over display rules (e.g. hiding the form after submit) */
+.founding-page [hidden] {
+  display: none !important;
+}
+
 .founding-page .apply-form {
   display: grid;
   gap: 1.1rem;
@@ -552,8 +557,16 @@ summary {
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: var(--radius-sm);
+  line-height: 1.4;
   padding: 0.65rem 0.8rem;
   transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+/* Keep inputs and selects the same height so side-by-side fields line up */
+.founding-page input[type="text"],
+.founding-page input[type="email"],
+.founding-page select {
+  height: 3rem;
 }
 
 .founding-page textarea {
@@ -580,7 +593,8 @@ summary {
   margin-top: 0.2rem;
 }
 
-.founding-page .choice {
+.founding-page .choice,
+.founding-page .field .choice {
   display: inline-flex;
   align-items: flex-start;
   gap: 0.5rem;
