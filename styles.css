@@ -430,3 +430,235 @@ summary {
 .legal-content ul {
   padding-left: 1.2rem;
 }
+
+/* ---------- Founding Practitioner landing page (/founding) ---------- */
+
+.founding-page .deal-grid {
+  display: grid;
+  gap: 1rem;
+  margin-top: 1.4rem;
+}
+
+.founding-page .deal-card ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 0.6rem;
+}
+
+.founding-page .deal-card li {
+  position: relative;
+  padding-left: 1.7rem;
+  color: var(--text-soft);
+}
+
+.founding-page .tick-list li::before,
+.founding-page .ask-list li::before {
+  position: absolute;
+  left: 0;
+  top: 0.05rem;
+  width: 1.2rem;
+  height: 1.2rem;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-size: 0.75rem;
+  font-weight: 800;
+}
+
+.founding-page .tick-list li::before {
+  content: "✓";
+  color: #fff;
+  background: var(--primary);
+}
+
+.founding-page .ask-list li::before {
+  content: "→";
+  color: var(--primary);
+  background: var(--eyebrow-bg);
+  border: 1px solid var(--eyebrow-border);
+}
+
+.founding-page .steps {
+  list-style: none;
+  margin: 1.4rem 0 0;
+  padding: 0;
+  display: grid;
+  gap: 1rem;
+  position: relative;
+  z-index: 1;
+}
+
+.founding-page .step-num {
+  display: inline-grid;
+  place-items: center;
+  width: 2rem;
+  height: 2rem;
+  margin-bottom: 0.6rem;
+  border-radius: 50%;
+  background: var(--primary);
+  color: #fff;
+  font-weight: 800;
+}
+
+.founding-page .step p {
+  margin: 0;
+  color: var(--text-soft);
+}
+
+/* Form */
+.founding-page .apply-form {
+  display: grid;
+  gap: 1.1rem;
+  margin-top: 1.4rem;
+  padding: clamp(1.15rem, 3vw, 1.8rem);
+}
+
+.founding-page .form-row {
+  display: grid;
+  gap: 1.1rem;
+}
+
+.founding-page .field {
+  display: grid;
+  gap: 0.35rem;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  min-width: 0;
+}
+
+.founding-page .field label,
+.founding-page .field legend {
+  font-weight: 700;
+  font-size: 0.95rem;
+  padding: 0;
+}
+
+.founding-page .optional {
+  font-weight: 500;
+  color: var(--text-soft);
+}
+
+.founding-page input[type="text"],
+.founding-page input[type="email"],
+.founding-page select,
+.founding-page textarea {
+  width: 100%;
+  font: inherit;
+  color: var(--text);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 0.65rem 0.8rem;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.founding-page textarea {
+  resize: vertical;
+  min-height: 5.5rem;
+}
+
+.founding-page input:focus,
+.founding-page select:focus,
+.founding-page textarea:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(31, 109, 83, 0.18);
+}
+
+.founding-page .was-validated :invalid {
+  border-color: #b42318;
+}
+
+.founding-page .choice-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem 1.4rem;
+  margin-top: 0.2rem;
+}
+
+.founding-page .choice {
+  display: inline-flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.founding-page .choice input {
+  margin-top: 0.35rem;
+  accent-color: var(--primary);
+}
+
+.founding-page .consent {
+  font-size: 0.95rem;
+  color: var(--text-soft);
+}
+
+.founding-page .consent a {
+  color: var(--primary);
+}
+
+.founding-page .hp {
+  position: absolute;
+  left: -10000px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.founding-page .form-error {
+  margin: 0;
+  padding: 0.65rem 0.85rem;
+  border-radius: var(--radius-sm);
+  background: #fef3f2;
+  border: 1px solid #fecdca;
+  color: #b42318;
+  font-weight: 600;
+}
+
+.founding-page .submit {
+  justify-self: start;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.founding-page .submit:disabled {
+  opacity: 0.7;
+  cursor: progress;
+}
+
+.founding-page .form-success {
+  margin-top: 1.4rem;
+  border-color: var(--primary);
+}
+
+.founding-page .form-success p {
+  margin-bottom: 0;
+  color: var(--text-soft);
+}
+
+@media (max-width: 47.99rem) {
+  .founding-page .nav-wrap {
+    flex-wrap: nowrap;
+  }
+
+  .founding-page .submit {
+    justify-self: stretch;
+    text-align: center;
+  }
+}
+
+@media (min-width: 48rem) {
+  .founding-page .deal-grid,
+  .founding-page .form-row.two {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .founding-page .steps {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
