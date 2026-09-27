@@ -7,7 +7,7 @@
 
   <meta
     name="description"
-    content="20 places for canine therapists to help shape Wolds Record. Free during beta, a founding-member discount after, and a direct say in what gets built."
+    content="20 places for canine therapists to help shape Wolds Record. Get the upgraded plan free for 12 months, a personal setup call, and a direct say in what gets built."
   />
   <meta name="robots" content="index,follow" />
   <link rel="canonical" href="https://www.woldsrecord.com/founding/" />
@@ -16,7 +16,7 @@
   <meta property="og:title" content="Become a Founding Practitioner — Wolds Record" />
   <meta
     property="og:description"
-    content="Record keeping built for canine therapists. 20 founding places: free beta access, a founding discount, and a real say in the roadmap."
+    content="Record keeping built for canine therapists. 20 founding places: the upgraded plan free for 12 months, and a real say in the roadmap."
   />
   <meta property="og:url" content="https://www.woldsrecord.com/founding/" />
   <meta property="og:image" content="https://www.woldsrecord.com/assets/images/dashboard-preview.png" />
@@ -106,8 +106,8 @@
             <a class="button button-secondary" href="#how-it-works">How it works</a>
           </div>
           <ul class="hero-stats" aria-label="Founding Practitioner perks at a glance">
-            <li><strong>Free during beta</strong><span>No card, no commitment</span></li>
-            <li><strong>Founding discount</strong><span>Locked in when paid plans launch</span></li>
+            <li><strong>Upgraded plan, free</strong><span>12 months on us, no card needed</span></li>
+            <li><strong>Personal setup</strong><span>We'll help you bring your records across</span></li>
             <li><strong>Direct line to the maker</strong><span>Your feedback shapes the roadmap</span></li>
           </ul>
         </div>
@@ -133,9 +133,7 @@
           <article class="card deal-card">
             <h3>You get</h3>
             <ul class="tick-list">
-              <li>Full access to Wolds Record, free for the whole beta</li>
-              <!-- TODO: Confirm the founding discount (e.g. "50% off for life" or "first year free") and make this line specific -->
-              <li>A founding-member discount when paid plans launch</li>
+              <li>The upgraded plan free for 12 months (the basic plan stays free for everyone)</li>
               <li>A personal setup call — we'll help you bring existing client and dog records across</li>
               <li>A direct line to Ben, who builds Wolds Record. Requests really do shape what gets built next</li>
               <li>Optional credit as a Founding Practitioner on this site</li>
@@ -225,13 +223,13 @@
         </p>
 
         <!--
-          TODO: Set data-endpoint to your form backend (e.g. a Formspree, Basin or Getform endpoint URL).
-          While it is empty, submitting opens a pre-filled email to hello@woldsrecord.com instead.
+          Submissions go to Formspree (data-endpoint). If data-endpoint is emptied,
+          submitting opens a pre-filled email to hello@woldsrecord.com instead.
         -->
         <form
           id="founding-form"
           class="card apply-form"
-          data-endpoint=""
+          data-endpoint="https://formspree.io/f/mnpngejo"
           data-fallback-email="hello@woldsrecord.com"
           novalidate
         >
@@ -242,7 +240,8 @@
             </div>
             <div class="field">
               <label for="f-email">Email</label>
-              <input id="f-email" name="email" type="email" autocomplete="email" required />
+              <input id="f-email" name="email" type="email" autocomplete="email" aria-describedby="f-email-hint" required />
+              <span class="hint" id="f-email-hint">Already have an account? Use the same email and we'll upgrade it.</span>
             </div>
           </div>
 
@@ -321,6 +320,9 @@
             </select>
           </div>
 
+          <!-- Email subject line for Formspree notifications -->
+          <input type="hidden" name="_subject" value="New Founding Practitioner application" />
+
           <!-- Campaign tracking, filled from the URL (utm_source etc.) -->
           <input type="hidden" name="utm_source" />
           <input type="hidden" name="utm_medium" />
@@ -345,7 +347,7 @@
 
         <div id="form-success" class="card form-success" tabindex="-1" hidden>
           <h3>Thanks — your application is in.</h3>
-          <p>We'll be in touch within 48 hours to book your setup call. If you have any questions in the meantime, email <a href="mailto:hello@woldsrecord.com">hello@woldsrecord.com</a>.</p>
+          <p>We'll be in touch within 48 hours to book your setup call and upgrade your account. If you have any questions in the meantime, email <a href="mailto:hello@woldsrecord.com">hello@woldsrecord.com</a>.</p>
         </div>
       </div>
     </section>
@@ -355,8 +357,8 @@
       <div class="container narrow">
         <h2 id="faq-title">Questions</h2>
         <details>
-          <summary>Is it really free?</summary>
-          <p>Yes. Founding Practitioners pay nothing during the beta, and you don't need to enter card details to take part.</p>
+          <summary>Isn't Wolds Record already free?</summary>
+          <p>The basic plan is, and anyone can <a href="https://app.woldsrecord.com">sign up</a>. Founding Practitioners get the upgraded plan free for 12 months, plus a setup call and a direct say in what we build. No card needed.</p>
         </details>
         <details>
           <summary>Is my clients' data safe?</summary>
@@ -371,8 +373,8 @@
           <p>Yes. We'll talk through what you have on your setup call and help you get your key dogs and clients in.</p>
         </details>
         <details>
-          <summary>What happens when the beta ends?</summary>
-          <p>You keep your records and your founding-member discount. You'll hear about pricing well before anything changes, and there's no obligation to continue.</p>
+          <summary>What happens after 12 months?</summary>
+          <p>Your account and records stay yours. You can carry on with the upgraded plan at the normal price or drop back to the free basic plan. We'll remind you well before anything changes, and there's no obligation.</p>
         </details>
       </div>
     </section>
