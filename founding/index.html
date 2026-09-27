@@ -223,13 +223,13 @@
         </p>
 
         <!--
-          TODO: Set data-endpoint to your form backend (e.g. a Formspree, Basin or Getform endpoint URL).
-          While it is empty, submitting opens a pre-filled email to hello@woldsrecord.com instead.
+          Submissions go to Formspree (data-endpoint). If data-endpoint is emptied,
+          submitting opens a pre-filled email to hello@woldsrecord.com instead.
         -->
         <form
           id="founding-form"
           class="card apply-form"
-          data-endpoint=""
+          data-endpoint="https://formspree.io/f/mnpngejo"
           data-fallback-email="hello@woldsrecord.com"
           novalidate
         >
@@ -319,6 +319,9 @@
               <option>Other</option>
             </select>
           </div>
+
+          <!-- Email subject line for Formspree notifications -->
+          <input type="hidden" name="_subject" value="New Founding Practitioner application" />
 
           <!-- Campaign tracking, filled from the URL (utm_source etc.) -->
           <input type="hidden" name="utm_source" />
