@@ -7,7 +7,7 @@
 
   <meta
     name="description"
-    content="20 places for canine therapists to help shape Wolds Record. Get the upgraded plan free for 12 months, a personal setup call, and a direct say in what gets built."
+    content="20 places for canine therapists to help shape Wolds Record. Get the upgraded plan free for 12 months, email setup help, and a direct say in what gets built."
   />
   <meta name="robots" content="index,follow" />
   <link rel="canonical" href="https://www.woldsrecord.com/founding/" />
@@ -134,8 +134,8 @@
             <h3>You get</h3>
             <ul class="tick-list">
               <li>The upgraded plan free for 12 months (the basic plan stays free for everyone)</li>
-              <li>A personal setup call — we'll help you bring existing client and dog records across</li>
-              <li>A direct line to Ben, who builds Wolds Record. Requests really do shape what gets built next</li>
+              <li>Personal setup by email — we'll help you bring your key client and dog records across</li>
+              <li>Email support from Ben, who builds Wolds Record. Your requests shape what gets built next</li>
               <li>Optional credit as a Founding Practitioner on this site</li>
             </ul>
           </article>
@@ -143,7 +143,6 @@
             <h3>We ask</h3>
             <ul class="ask-list">
               <li>Use it with real client sessions for at least four weeks</li>
-              <li>One 20-minute onboarding call</li>
               <li>A quick three-question check-in every two weeks</li>
               <li>Tell us when something is confusing, slow or missing</li>
               <li>If you're happy with it, a short testimonial at the end</li>
@@ -200,8 +199,8 @@
           </li>
           <li class="card step">
             <span class="step-num" aria-hidden="true">2</span>
-            <h3>Quick call</h3>
-            <p>We'll be in touch within 48 hours to book a 20-minute setup call at a time that suits you.</p>
+            <h3>Get set up by email</h3>
+            <p>We'll email your account upgrade and a short setup guide within 48 hours. Reply if you get stuck and we'll help you get started.</p>
           </li>
           <li class="card step">
             <span class="step-num" aria-hidden="true">3</span>
@@ -293,18 +292,9 @@
           </div>
 
           <div class="field">
-            <label for="f-pain">What's the most frustrating part of your admin right now?</label>
-            <textarea id="f-pain" name="biggest_frustration" rows="3" required></textarea>
+            <label for="f-pain">What's the most frustrating part of your admin right now? <span class="optional">(optional)</span></label>
+            <textarea id="f-pain" name="biggest_frustration" rows="3"></textarea>
           </div>
-
-          <fieldset class="field">
-            <legend>Happy to do a 20-minute feedback call?</legend>
-            <div class="choice-row">
-              <label class="choice"><input type="radio" name="feedback_call" value="Yes" required /> Yes</label>
-              <label class="choice"><input type="radio" name="feedback_call" value="Maybe" /> Maybe</label>
-              <label class="choice"><input type="radio" name="feedback_call" value="No" /> No</label>
-            </div>
-          </fieldset>
 
           <div class="field">
             <label for="f-source">How did you hear about us? <span class="optional">(optional)</span></label>
@@ -347,7 +337,7 @@
 
         <div id="form-success" class="card form-success" tabindex="-1" hidden>
           <h3>Thanks — your application is in.</h3>
-          <p>We'll be in touch within 48 hours to book your setup call and upgrade your account. If you have any questions in the meantime, email <a href="mailto:hello@woldsrecord.com">hello@woldsrecord.com</a>.</p>
+          <p>We'll email your account upgrade and setup guide within 48 hours. Reply to that email if you need a hand getting started.</p>
         </div>
       </div>
     </section>
@@ -358,7 +348,7 @@
         <h2 id="faq-title">Questions</h2>
         <details>
           <summary>Isn't Wolds Record already free?</summary>
-          <p>The basic plan is, and anyone can <a href="https://app.woldsrecord.com">sign up</a>. Founding Practitioners get the upgraded plan free for 12 months, plus a setup call and a direct say in what we build. No card needed.</p>
+          <p>The basic plan is, and anyone can <a href="https://app.woldsrecord.com">sign up</a>. Founding Practitioners get the upgraded plan free for 12 months, plus email setup help and a direct say in what we build. No card needed.</p>
         </details>
         <details>
           <summary>Is my clients' data safe?</summary>
@@ -370,7 +360,7 @@
         </details>
         <details>
           <summary>Can I bring my existing records?</summary>
-          <p>Yes. We'll talk through what you have on your setup call and help you get your key dogs and clients in.</p>
+          <p>Yes. We'll send simple steps to help you bring your key dogs and clients across. If anything isn't clear, reply to us by email.</p>
         </details>
         <details>
           <summary>What happens after 12 months?</summary>
@@ -428,9 +418,24 @@
         if (input && params.get(key)) input.value = params.get(key);
       });
 
+      var utm = {
+        source: params.get('utm_source') || '(direct)',
+        medium: params.get('utm_medium') || '',
+        campaign: params.get('utm_campaign') || '',
+        content: params.get('utm_content') || ''
+      };
+
       var started = false;
       form.addEventListener('input', function () {
-        if (!started) { started = true; trackEvent('founding_form_start'); }
+        if (!started) {
+          started = true;
+          trackEvent('founding_form_start', {
+            utm_source: utm.source,
+            utm_medium: utm.medium,
+            utm_campaign: utm.campaign,
+            utm_content: utm.content
+          });
+        }
       });
 
       function showError(msg) {
@@ -469,13 +474,11 @@
         if (data.get('_gotcha')) return; // likely spam
 
         var endpoint = form.dataset.endpoint;
-        var utm = { source: data.get('utm_source') || '(direct)' };
-
         if (!endpoint) {
           // Fallback: pre-filled email until a form backend is configured
           var subject = encodeURIComponent('Founding Practitioner application — ' + data.get('name'));
           var body = encodeURIComponent(toEmailBody(data));
-          trackEvent('founding_form_submit', { method: 'email', utm_source: utm.source });
+          trackEvent('founding_form_submit', { method: 'email', utm_source: utm.source, utm_medium: utm.medium, utm_campaign: utm.campaign, utm_content: utm.content });
           window.location.href = 'mailto:' + form.dataset.fallbackEmail + '?subject=' + subject + '&body=' + body;
           showSuccess();
           return;
@@ -491,7 +494,7 @@
         })
           .then(function (res) {
             if (!res.ok) throw new Error('Request failed');
-            trackEvent('founding_form_submit', { method: 'form', utm_source: utm.source });
+            trackEvent('founding_form_submit', { method: 'form', utm_source: utm.source, utm_medium: utm.medium, utm_campaign: utm.campaign, utm_content: utm.content });
             showSuccess();
           })
           .catch(function () {
