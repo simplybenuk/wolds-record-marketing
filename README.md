@@ -50,6 +50,10 @@ Search for `TODO: Replace` in `index.html` for:
 - pricing details
 - screenshot / image paths
 
+## Founding Practitioner capacity
+
+The offer page uses a manual switch because the static site does not track application count. In `founding/index.html`, change `data-founding-full="false"` on the `<body>` element to `data-founding-full="true"` when all 20 places are filled. The full state closes the application form, hides founding-only details, and routes the primary calls to action to the free basic signup. It carries through `utm_source`, `utm_medium`, `utm_campaign`, and `utm_content`.
+
 ## Using your provided images
 
 Add your exported image files into `assets/` and update image `src` values in `index.html`.

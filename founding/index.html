@@ -71,7 +71,7 @@
 
   <link rel="stylesheet" href="/styles.css" />
 </head>
-<body class="founding-page">
+<body class="founding-page" data-founding-full="false">
   <a class="skip-link" href="#main-content">Skip to main content</a>
 
   <header class="site-header" aria-label="Top navigation">
@@ -95,17 +95,17 @@
     <section class="section hero" aria-labelledby="hero-title">
       <div class="container hero-grid">
         <div>
-          <p class="eyebrow">Founding Practitioner beta · 20 places</p>
+          <p id="founding-availability" class="eyebrow">Founding Practitioner beta · 20 places</p>
           <h1 id="hero-title">Help shape the record-keeping app built for canine therapists.</h1>
-          <p class="lead">
+          <p id="hero-description" class="lead">
             Wolds Record keeps dog profiles, cases, session notes, owner consent and vet reports in one calm workspace.
             We're inviting 20 practitioners to use it with real clients and tell us honestly what works — and what doesn't.
           </p>
           <div class="cta-group">
             <a class="button button-primary" href="#apply" onclick="trackEvent('founding_cta_hero')">Apply in 2 minutes</a>
-            <a class="button button-secondary" href="#how-it-works">How it works</a>
+            <a id="founding-how-cta" class="button button-secondary" href="#how-it-works">How it works</a>
           </div>
-          <ul class="hero-stats" aria-label="Founding Practitioner perks at a glance">
+          <ul id="founding-hero-stats" class="hero-stats" aria-label="Founding Practitioner perks at a glance">
             <li><strong>Upgraded plan, free</strong><span>12 months on us, no card needed</span></li>
             <li><strong>Personal setup</strong><span>We'll help you bring your records across</span></li>
             <li><strong>Direct line to the maker</strong><span>Your feedback shapes the roadmap</span></li>
@@ -125,7 +125,7 @@
     </section>
 
     <!-- The deal -->
-    <section class="section muted" aria-labelledby="deal-title">
+    <section id="founding-deal" class="section muted" aria-labelledby="deal-title">
       <div class="container">
         <p class="eyebrow">The founding deal</p>
         <h2 id="deal-title">What you get, and what we ask.</h2>
@@ -214,9 +214,9 @@
     <!-- Application form -->
     <section id="apply" class="section muted" aria-labelledby="apply-title">
       <div class="container narrow">
-        <p class="eyebrow">Apply</p>
+        <p id="apply-eyebrow" class="eyebrow">Apply</p>
         <h2 id="apply-title">Apply to become a Founding Practitioner.</h2>
-        <p class="lead">
+        <p id="apply-description" class="lead">
           Places are limited to 20 so we can support everyone properly. We're looking for practitioners who see clients
           regularly — newly qualified or well established.
         </p>
@@ -339,6 +339,12 @@
           <h3>Thanks — your application is in.</h3>
           <p>We'll email your account upgrade and setup guide within 48 hours. Reply to that email if you need a hand getting started.</p>
         </div>
+
+        <div id="founding-capacity-full" class="card form-success" tabindex="-1" hidden>
+          <h3>Still want to try Wolds Record?</h3>
+          <p>The first 20 Founding Practitioner places are full. The free basic plan is still open, with no card needed.</p>
+          <a id="capacity-signup" class="button button-primary" href="https://app.woldsrecord.com/">Create a free account</a>
+        </div>
       </div>
     </section>
 
@@ -348,7 +354,7 @@
         <h2 id="faq-title">Questions</h2>
         <details>
           <summary>Isn't Wolds Record already free?</summary>
-          <p>The basic plan is, and anyone can <a href="https://app.woldsrecord.com">sign up</a>. Founding Practitioners get the upgraded plan free for 12 months, plus email setup help and a direct say in what we build. No card needed.</p>
+          <p id="founding-plan-answer">The basic plan is, and anyone can <a href="https://app.woldsrecord.com">sign up</a>. Founding Practitioners get the upgraded plan free for 12 months, plus email setup help and a direct say in what we build. No card needed.</p>
         </details>
         <details>
           <summary>Is my clients' data safe?</summary>
@@ -424,6 +430,59 @@
         campaign: params.get('utm_campaign') || '',
         content: params.get('utm_content') || ''
       };
+
+      var foundingFull = document.body.dataset.foundingFull === 'true';
+      var signupUrl = new URL('https://app.woldsrecord.com/');
+      ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content'].forEach(function (key) {
+        var value = params.get(key);
+        if (value) signupUrl.searchParams.set(key, value);
+      });
+      var signupUrlString = signupUrl.toString();
+      var capacitySignup = document.getElementById('capacity-signup');
+      capacitySignup.href = signupUrlString;
+
+      function trackCapacitySignupClick() {
+        trackEvent('founding_capacity_signup_click', {
+          utm_source: utm.source,
+          utm_medium: utm.medium,
+          utm_campaign: utm.campaign,
+          utm_content: utm.content
+        });
+      }
+
+      capacitySignup.addEventListener('click', trackCapacitySignupClick);
+
+      if (foundingFull) {
+        form.hidden = true;
+        success.hidden = true;
+        document.getElementById('founding-capacity-full').hidden = false;
+        document.getElementById('apply-eyebrow').textContent = 'Free basic plan';
+        document.getElementById('apply-title').textContent = 'The first 20 founding places are full.';
+        document.getElementById('apply-description').textContent = 'You can still create a free basic account, with no card needed.';
+        document.getElementById('founding-availability').textContent = 'Founding places filled';
+        document.getElementById('hero-title').textContent = 'Practical record-keeping for canine therapists.';
+        document.getElementById('hero-description').textContent = 'The first 20 Founding Practitioner places are full. Wolds Record’s basic plan is still free, with no card needed.';
+        document.getElementById('founding-hero-stats').hidden = true;
+        document.getElementById('founding-deal').hidden = true;
+        document.getElementById('how-it-works').hidden = true;
+        document.getElementById('founding-how-cta').href = '#features';
+        document.getElementById('founding-how-cta').textContent = 'See what it does';
+        document.getElementById('founding-plan-answer').textContent = 'The basic plan is free for everyone. The first 20 Founding Practitioner places are full, but you can still sign up for the free basic plan.';
+
+        document.querySelectorAll('a[href="#apply"]').forEach(function (link) {
+          link.href = signupUrlString;
+          link.textContent = 'Create a free account';
+          link.removeAttribute('onclick');
+          link.addEventListener('click', trackCapacitySignupClick);
+        });
+
+        trackEvent('founding_capacity_full', {
+          utm_source: utm.source,
+          utm_medium: utm.medium,
+          utm_campaign: utm.campaign,
+          utm_content: utm.content
+        });
+      }
 
       var started = false;
       form.addEventListener('input', function () {
