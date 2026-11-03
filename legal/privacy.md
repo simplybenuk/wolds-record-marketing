@@ -1,6 +1,6 @@
 # Privacy Policy
 
-_Last updated: 2026-06-23_
+_Last updated: 2026-11-03_
 
 Benjamin Whitfield-Heap, trading as Wolds Record ("Wolds Record", "we", "us", "our") respects your privacy and is committed to protecting your personal information.
 
@@ -41,6 +41,14 @@ We use trusted third-party providers, including:
 - Resend – system-generated transactional emails
 - Google Analytics 4 (GA4) – marketing website analytics (with consent)
 - PostHog – product analytics in the application
+
+### Booking emails
+
+When booking emails are enabled, Wolds Record uses Resend as a subprocessor to send them on behalf of practitioners. Resend receives the recipient's email address and the appointment details included in the email. Resend stores email and log data in the United States for 30 days. International transfers are covered by Resend's [data processing addendum](https://resend.com/legal/dpa), which incorporates standard contractual clauses and the UK addendum where applicable.
+
+Practitioners are responsible for their own privacy notices as controllers of their clients' personal data. They can adapt the following wording to reflect their own practices:
+
+We use Wolds Record to manage appointments and send booking emails. Wolds Record uses Resend to deliver these emails. Resend receives your email address and the appointment details included in the email, and stores email and log data in the United States for 30 days. Transfers are covered by contractual safeguards, including standard contractual clauses and the UK addendum where applicable.
 
 ## Analytics
 
