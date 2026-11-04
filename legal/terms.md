@@ -1,10 +1,20 @@
 # Terms and Conditions
 
-_Last updated: 2026-06-23_
+_Last updated: 2026-11-04_
 
 These Terms and Conditions ("Terms") govern your use of Wolds Record provided by Benjamin Whitfield-Heap, trading as Wolds Record.
 
 These Terms apply to both the marketing website (woldsrecord.com) and the application (app.woldsrecord.com).
+
+## Minimum age requirement
+
+You must be at least 18 years old to register for and operate a Wolds Record account.
+
+By creating an account, you confirm that you are at least 18 years old and have the legal authority to agree to these Terms.
+
+We may suspend or terminate an account if we reasonably believe its account holder does not meet this age requirement.
+
+Account holders may manage records relating to individuals under 18, provided they comply with applicable data protection laws and obtain any necessary consent or authorisation.
 
 ## Service use
 
