@@ -736,20 +736,6 @@ summary {
   gap: 0.4rem;
 }
 
-.plan-badge {
-  display: inline-block;
-  margin: 0 0 0.3rem;
-  font-size: 0.78rem;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  font-weight: 700;
-  color: var(--eyebrow-text);
-  background: var(--eyebrow-bg);
-  border: 1px solid var(--eyebrow-border);
-  border-radius: 100px;
-  padding: 0.18rem 0.6rem;
-  align-self: flex-start;
-}
 
 .plan-name {
   font-size: clamp(1.3rem, 2.5vw, 1.65rem);
