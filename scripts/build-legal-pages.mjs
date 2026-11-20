@@ -140,7 +140,7 @@ const buildPageHtml = ({ title, bodyHtml, slug, siteUrl }) => `<!doctype html>
 `;
 
 const buildAllLegalPages = async () => {
-  const siteUrl = (process.env.SITE_URL || 'https://placeholder-domain.example').replace(/\/$/, '');
+  const siteUrl = (process.env.SITE_URL || 'https://www.woldsrecord.com').replace(/\/$/, '');
 
   for (const [slug, page] of Object.entries(pageMap)) {
     const markdown = await fs.readFile(page.source, 'utf8');
