@@ -682,3 +682,209 @@ summary {
   font-size: 0.85rem;
   color: var(--text-soft);
 }
+
+/* ---------- Pricing page (/pricing/) ---------- */
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Three-column plan card grid */
+.pricing-grid {
+  display: grid;
+  gap: 1.2rem;
+  align-items: start;
+  margin-top: 0.5rem;
+}
+
+@media (min-width: 48rem) {
+  .pricing-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+/* Individual plan card */
+.pricing-card {
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: linear-gradient(180deg, #ffffff, #f8fcfa);
+  box-shadow: var(--shadow-soft);
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.pricing-card--featured {
+  border-color: var(--primary);
+  box-shadow: var(--shadow-strong);
+  background: linear-gradient(180deg, #ffffff, #f2faf6);
+  position: relative;
+}
+
+.pricing-card-header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.plan-badge {
+  display: inline-block;
+  margin: 0 0 0.3rem;
+  font-size: 0.78rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--eyebrow-text);
+  background: var(--eyebrow-bg);
+  border: 1px solid var(--eyebrow-border);
+  border-radius: 100px;
+  padding: 0.18rem 0.6rem;
+  align-self: flex-start;
+}
+
+.plan-name {
+  font-size: clamp(1.3rem, 2.5vw, 1.65rem);
+  margin: 0;
+  letter-spacing: -0.01em;
+}
+
+.plan-price {
+  display: flex;
+  align-items: baseline;
+  gap: 0.2rem;
+  margin: 0.3rem 0 0;
+}
+
+.price-amount {
+  font-size: clamp(2rem, 4vw, 2.6rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1;
+  color: var(--text);
+}
+
+.price-period {
+  font-size: 0.95rem;
+  color: var(--text-soft);
+}
+
+.plan-tagline {
+  margin: 0.4rem 0 0;
+  font-size: 0.95rem;
+  color: var(--text-soft);
+}
+
+/* Feature list inside a card */
+.plan-features {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0.55rem;
+  border-top: 1px solid var(--border-soft);
+  padding-top: 1rem;
+}
+
+.plan-features li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.95rem;
+}
+
+.feat-label {
+  color: var(--text-soft);
+}
+
+.feat-value {
+  font-weight: 600;
+  color: var(--text);
+}
+
+.plan-cta {
+  margin-top: auto;
+}
+
+.plan-cta .button {
+  display: block;
+  text-align: center;
+  width: 100%;
+}
+
+/* Comparison table */
+.table-wrap {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface);
+  box-shadow: var(--shadow-soft);
+}
+
+.compare-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+}
+
+.compare-table thead th {
+  padding: 0.9rem 1.2rem;
+  text-align: left;
+  font-weight: 700;
+  background: var(--surface-muted);
+  border-bottom: 1px solid var(--border);
+  white-space: nowrap;
+}
+
+.compare-table thead th:not(:first-child) {
+  text-align: center;
+}
+
+.compare-table tbody th,
+.compare-table tbody td {
+  padding: 0.85rem 1.2rem;
+  border-bottom: 1px solid var(--border-soft);
+  vertical-align: middle;
+}
+
+.compare-table tbody tr:last-child th,
+.compare-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.compare-table tbody th {
+  font-weight: 600;
+  color: var(--text-soft);
+  text-align: left;
+}
+
+.compare-table tbody td {
+  text-align: center;
+  color: var(--text-soft);
+}
+
+.feat-yes {
+  color: var(--primary);
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+.feat-no {
+  color: var(--border);
+  font-size: 1.1rem;
+}
+
+/* Nav active state */
+.nav-links a[aria-current="page"] {
+  color: var(--primary);
+}
