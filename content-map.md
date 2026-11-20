@@ -19,10 +19,11 @@
 - **CTA text:** None in this section.
 
 ## 4) Pricing / Access
-- **Purpose:** Communicate beta-friendly plan availability and payment trust.
-- **Headline:** Simple access during beta.
-- **Supporting copy:** Plans are available for solo to small-team usage; secure billing handled through Stripe.
-- **CTA text:** Join the Beta, View plan details.
+- **Purpose:** Communicate plan availability and pricing clearly.
+- **Headline:** Simple pricing for canine therapists.
+- **Supporting copy:** Free (£0, 4 sessions/month), Starter (£9.99/month, unlimited), Pro (£19.99/month, unlimited + branding + export). Prices are monthly in GBP.
+- **CTA text:** Get started free, Start with Starter, Go Pro — all link to app.woldsrecord.com.
+- **Dedicated page:** `/pricing/index.html` — plan cards + accessible comparison table.
 
 ## 5) FAQ
 - **Purpose:** Reduce sign-up friction with quick answers.
@@ -34,4 +35,4 @@
 - **Purpose:** Provide trust, legal links, and support/contact paths.
 - **Headline:** Wolds Record (brand/footer identifier).
 - **Supporting copy:** Brief trust-oriented line plus copyright.
-- **CTA text:** Privacy Policy, Terms and Conditions, Cookie Policy, Knowledge Base, Contact.
+- **CTA text:** Pricing, Privacy Policy, Terms and Conditions, Cookie Policy, Knowledge Base, Contact.
