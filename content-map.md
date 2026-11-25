@@ -25,6 +25,13 @@
 - **CTA text:** Get started free, Start with Starter, Go Pro — all link to app.woldsrecord.com.
 - **Dedicated page:** `/pricing/index.html` — plan cards + accessible comparison table.
 
+## IAAT member benefit (unlisted)
+- **Purpose:** Direct-link page for IAAT members. Not in navigation or search (`noindex, follow`).
+- **Headline:** 50% off your first year of Wolds Record.
+- **Supporting copy:** Promotion code `IAAT` with a Copy code button; Free Forever (up to 4 session records/month); Starter and Pro annual cards with first-year and full renewal prices; redemption steps; offer terms.
+- **CTA text:** Start free, Choose Starter annual, Choose Pro annual. All link to app.woldsrecord.com.
+- **Page:** `/iaat/index.html`.
+
 ## 5) FAQ
 - **Purpose:** Reduce sign-up friction with quick answers.
 - **Headline:** Frequently asked questions.

@@ -63,3 +63,13 @@ Suggested filenames (optional):
 - `assets/wolds-dashboard.png`
 - `assets/wolds-records-illustration.png`
 - `assets/wolds-hero-illustration.png`
+
+## IAAT member-benefit page
+
+`/iaat/` is a direct-link page for IAAT members (issue #21). Keep it out of search:
+
+- It carries `<meta name="robots" content="noindex, follow">`. Keep that tag.
+- Do not link it from the main navigation or add it to any XML sitemap.
+- Do not disallow `/iaat/` in `robots.txt`: crawlers must fetch the page to see `noindex`.
+
+The annual prices on the page (Starter £100, Pro £199) come from Stripe through the app's `/api/billing/prices` endpoint. If the Stripe prices change, update the page. The first-year amounts are 50% of the annual price.

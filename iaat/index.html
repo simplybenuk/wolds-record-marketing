@@ -1,0 +1,372 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>IAAT member benefit | Wolds Record</title>
+
+  <meta
+    name="description"
+    content="IAAT members get 50% off their first year of an annual Wolds Record Starter or Pro subscription with code IAAT. Free Forever is also available, with up to four session records a month."
+  />
+  <!--
+    This page is reachable by direct link only. Keep it out of search results:
+    - keep "noindex, follow" below;
+    - do not add this page to any XML sitemap;
+    - do not disallow /iaat/ in robots.txt, because crawlers must fetch the page to see the noindex.
+    noindex is not access control. Stripe promotion code restrictions limit misuse.
+  -->
+  <meta name="robots" content="noindex, follow" />
+  <link rel="canonical" href="https://www.woldsrecord.com/iaat/" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="IAAT member benefit | Wolds Record" />
+  <meta
+    property="og:description"
+    content="50% off your first year of an annual Starter or Pro subscription with code IAAT, or start on Free Forever."
+  />
+  <meta property="og:url" content="https://www.woldsrecord.com/iaat/" />
+  <meta property="og:image" content="https://www.woldsrecord.com/assets/images/wolds-record-logo-bg-white-small.png" />
+
+  <!-- Google Consent Mode (default = denied) -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('consent', 'default', {
+      analytics_storage: 'denied',
+      ad_storage: 'denied',
+      ad_user_data: 'denied',
+      ad_personalization: 'denied'
+    });
+  </script>
+
+  <!-- Silktide cookie banner -->
+  <link rel="stylesheet" href="/cookie-banner/silktide-consent-manager.css">
+  <script src="/cookie-banner/silktide-consent-manager.js"></script>
+  <script>
+    silktideCookieBannerManager.updateCookieBannerConfig({
+      background: { showBackground: true },
+      cookieIcon: { position: "bottomLeft" },
+      cookieTypes: [
+        { id: "necessary", name: "Necessary", required: true },
+        {
+          id: "analytics",
+          name: "Analytics",
+          required: false,
+          onAccept: function() { gtag('consent', 'update', { analytics_storage: 'granted' }); },
+          onReject: function() { gtag('consent', 'update', { analytics_storage: 'denied' }); }
+        }
+      ],
+      text: {
+        banner: {
+          description: "<p>We use cookies to improve the site and understand usage. <a href=\"/cookie-policy\" target=\"_blank\">Cookie Policy</a></p>",
+          acceptAllButtonText: "Accept",
+          rejectNonEssentialButtonText: "Reject",
+          preferencesButtonText: "Preferences"
+        },
+        preferences: { title: "Cookie preferences" }
+      }
+    });
+  </script>
+
+  <!-- Google Analytics (respects consent mode) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-N82QYB8HRH"></script>
+  <script>
+    gtag('js', new Date());
+    gtag('config', 'G-N82QYB8HRH');
+  </script>
+
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body class="pricing-page iaat-page">
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <header class="site-header" aria-label="Top navigation">
+    <div class="container nav-wrap">
+      <a class="brand brand-link" href="/" aria-label="Wolds Record home">
+        <img
+          class="brand-logo"
+          src="/assets/images/wolds-record-logo-transparent-small.png"
+          alt="Wolds Record"
+          width="180"
+          height="44"
+        />
+        <span class="brand-wordmark">Wolds Record</span>
+      </a>
+      <nav aria-label="Main menu">
+        <ul class="nav-links">
+          <li><a href="/#features">Features</a></li>
+          <li><a href="/#faq">FAQ</a></li>
+          <li><a href="/pricing/">Pricing</a></li>
+        </ul>
+      </nav>
+      <a class="button button-secondary"
+         href="https://app.woldsrecord.com"
+         onclick="trackEvent('iaat_cta_sign_in')">
+         Sign In
+      </a>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <!-- Hero -->
+    <section class="section hero" aria-labelledby="iaat-title">
+      <div class="container iaat-hero">
+        <p class="eyebrow">IAAT member benefit</p>
+        <h1 id="iaat-title">50% off your first year of Wolds Record</h1>
+        <p class="lead">
+          IAAT members get half price on the first year of an annual Starter or Pro subscription.
+          Not ready to pay? Free Forever gives you up to four session records a month at no cost.
+        </p>
+
+        <div class="code-box" aria-labelledby="code-label">
+          <p id="code-label" class="code-box-label">Your promotion code</p>
+          <div class="code-box-row">
+            <code class="code-box-code" id="promo-code">IAAT</code>
+            <button
+              type="button"
+              class="button button-primary code-box-button"
+              id="copy-code"
+              aria-describedby="code-label"
+            >Copy code</button>
+          </div>
+          <p class="code-box-status small" id="copy-status" role="status" aria-live="polite"></p>
+          <p class="small code-box-hint">Enter it in the promotion code field at checkout when you choose an annual plan.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Plans -->
+    <section class="section" style="padding-top: 0;" aria-labelledby="plans-heading">
+      <div class="container">
+        <h2 id="plans-heading">Choose how you start</h2>
+        <p class="lead">Prices are in GBP.</p>
+
+        <!--
+          Annual prices come from Stripe (app /api/billing/prices, checked 25 Nov 2026):
+          Starter yearly £100.00, Pro yearly £199.00. First-year amounts are 50% of those.
+          Confirm them against a test-mode invoice with IAAT applied before launch.
+          Do not work annual prices out from the monthly prices.
+        -->
+        <div class="pricing-grid" role="list">
+
+          <!-- Free Forever -->
+          <article class="pricing-card" role="listitem" aria-labelledby="plan-free-name">
+            <div class="pricing-card-header">
+              <h3 id="plan-free-name" class="plan-name">Free Forever</h3>
+              <div class="plan-price">
+                <span class="price-amount">£0</span>
+              </div>
+              <p class="plan-tagline">
+                For students, newly qualified practitioners and anyone starting their practice. No card needed.
+              </p>
+            </div>
+            <ul class="plan-features" aria-label="Free Forever plan features">
+              <li><span class="feat-label">Session records</span><span class="feat-value">Up to 4 per month</span></li>
+              <li><span class="feat-label">Promotion code</span><span class="feat-value">Not needed</span></li>
+            </ul>
+            <div class="plan-cta">
+              <a
+                class="button button-secondary"
+                href="https://app.woldsrecord.com"
+                onclick="trackEvent('iaat_cta_free')"
+              >Start free</a>
+            </div>
+          </article>
+
+          <!-- Starter annual -->
+          <article class="pricing-card pricing-card--featured" role="listitem" aria-labelledby="plan-starter-name">
+            <div class="pricing-card-header">
+              <h3 id="plan-starter-name" class="plan-name">Starter, annual</h3>
+              <div class="plan-price">
+                <span class="price-amount" data-iaat-price="starter-first-year">£50</span>
+                <span class="price-period">first year</span>
+              </div>
+              <p class="plan-tagline">
+                Then <span data-iaat-price="starter-annual">£100</span> a year, the full annual Starter price.
+              </p>
+            </div>
+            <ul class="plan-features" aria-label="Starter annual plan features">
+              <li><span class="feat-label">Session records</span><span class="feat-value">Unlimited</span></li>
+              <li><span class="feat-label">IAAT discount</span><span class="feat-value">50% off year one</span></li>
+            </ul>
+            <div class="plan-cta">
+              <a
+                class="button button-primary"
+                href="https://app.woldsrecord.com"
+                onclick="trackEvent('iaat_cta_starter_annual')"
+              >Choose Starter annual</a>
+            </div>
+          </article>
+
+          <!-- Pro annual -->
+          <article class="pricing-card" role="listitem" aria-labelledby="plan-pro-name">
+            <div class="pricing-card-header">
+              <h3 id="plan-pro-name" class="plan-name">Pro, annual</h3>
+              <div class="plan-price">
+                <span class="price-amount" data-iaat-price="pro-first-year">£99.50</span>
+                <span class="price-period">first year</span>
+              </div>
+              <p class="plan-tagline">
+                Then <span data-iaat-price="pro-annual">£199</span> a year, the full annual Pro price.
+              </p>
+            </div>
+            <ul class="plan-features" aria-label="Pro annual plan features">
+              <li><span class="feat-label">Session records</span><span class="feat-value">Unlimited</span></li>
+              <li><span class="feat-label">Custom branding</span><span class="feat-value">Included</span></li>
+              <li><span class="feat-label">Data export</span><span class="feat-value">Included</span></li>
+              <li><span class="feat-label">IAAT discount</span><span class="feat-value">50% off year one</span></li>
+            </ul>
+            <div class="plan-cta">
+              <a
+                class="button button-secondary"
+                href="https://app.woldsrecord.com"
+                onclick="trackEvent('iaat_cta_pro_annual')"
+              >Choose Pro annual</a>
+            </div>
+          </article>
+
+        </div><!-- /.pricing-grid -->
+      </div>
+    </section>
+
+    <!-- How to redeem -->
+    <section class="section muted" aria-labelledby="redeem-heading">
+      <div class="container narrow">
+        <h2 id="redeem-heading">How to use the code</h2>
+        <ol class="iaat-steps">
+          <li>Sign in or create a free account at <a href="https://app.woldsrecord.com">app.woldsrecord.com</a>.</li>
+          <li>Open your organisation settings and go to Billing.</li>
+          <li>Choose Starter or Pro and select annual billing.</li>
+          <li>At checkout, select <strong>Add promotion code</strong>, enter <strong>IAAT</strong> and check the discount appears before you pay.</li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- Offer terms -->
+    <section class="section" aria-labelledby="terms-heading">
+      <div class="container narrow">
+        <h2 id="terms-heading">Offer terms</h2>
+        <ul class="iaat-terms">
+          <li><strong>Who can use it:</strong> members of the International Association of Animal Therapists (IAAT).</li>
+          <li><strong>What you get:</strong> 50% off the first year of an annual Starter or Pro subscription.</li>
+          <li><strong>Annual plans only:</strong> the code does not apply to monthly billing.</li>
+          <li><strong>First year only:</strong> each organisation gets the discount once, on its first annual subscription. It is not an ongoing discount.</li>
+          <li><strong>Renewal:</strong> your subscription renews automatically each year at the full annual price that applies at the time. You can cancel at any time before it renews.</li>
+          <li><strong>New subscriptions:</strong> enter the code when you first subscribe through checkout. It cannot be added to a subscription you already have, or combined with other offers.</li>
+          <li><strong>Prices and tax:</strong> prices are in GBP. Checkout shows the full amount you will pay, including any tax, before you confirm.</li>
+          <li><strong>Changes:</strong> the offer is available to IAAT members on an ongoing basis. We may change or withdraw it for new subscriptions. Any discount you have already received is not affected.</li>
+        </ul>
+        <p class="small">
+          These terms sit alongside our <a href="/terms">Terms and Conditions</a> and
+          <a href="/privacy">Privacy Policy</a>. Questions? Email
+          <a href="mailto:hello@woldsrecord.com">hello@woldsrecord.com</a>.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer" aria-label="Footer">
+    <div class="container footer-wrap">
+      <div>
+        <a class="brand brand-link" href="/" aria-label="Wolds Record home">
+          <img
+            class="brand-logo"
+            src="/assets/images/wolds-record-logo-transparent-small.png"
+            alt="Wolds Record"
+            width="180"
+            height="44"
+          />
+          <span class="brand-wordmark">Wolds Record</span>
+        </a>
+        <p class="small">Practical, trustworthy record keeping for canine therapists.</p>
+        <p class="small">&copy; <span id="year"></span> Benjamin Whitfield-Heap, trading as Wolds Record. All rights reserved.</p>
+      </div>
+      <nav aria-label="Footer links">
+        <ul class="footer-links">
+          <li><a href="/pricing/">Pricing</a></li>
+          <li><a href="/privacy">Privacy Policy</a></li>
+          <li><a href="/terms">Terms and Conditions</a></li>
+          <li><a href="/cookie-policy">Cookie Policy</a></li>
+          <li><a href="https://help.woldsrecord.com">Knowledge Base</a></li>
+          <li><a href="mailto:hello@woldsrecord.com">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+  <script>
+    function trackEvent(name) {
+      if (typeof gtag === 'function') {
+        gtag('event', name);
+      }
+    }
+  </script>
+  <script>
+    (function () {
+      var button = document.getElementById('copy-code');
+      var status = document.getElementById('copy-status');
+      var codeEl = document.getElementById('promo-code');
+      var code = codeEl.textContent.trim();
+      var resetTimer;
+
+      function announce(message) {
+        // Clear first so screen readers re-announce a repeated message.
+        status.textContent = '';
+        window.setTimeout(function () { status.textContent = message; }, 50);
+        window.clearTimeout(resetTimer);
+        resetTimer = window.setTimeout(function () {
+          status.textContent = '';
+          button.textContent = 'Copy code';
+        }, 4000);
+      }
+
+      function selectCode() {
+        var range = document.createRange();
+        range.selectNodeContents(codeEl);
+        var selection = window.getSelection();
+        selection.removeAllRanges();
+        selection.addRange(range);
+      }
+
+      function legacyCopy() {
+        var field = document.createElement('textarea');
+        field.value = code;
+        field.setAttribute('readonly', '');
+        field.style.position = 'fixed';
+        field.style.opacity = '0';
+        document.body.appendChild(field);
+        field.select();
+        var ok = false;
+        try { ok = document.execCommand('copy'); } catch (e) { ok = false; }
+        document.body.removeChild(field);
+        return ok;
+      }
+
+      function copied() {
+        button.textContent = 'Copied';
+        announce('Code IAAT copied to your clipboard.');
+        trackEvent('iaat_copy_code');
+      }
+
+      function failed() {
+        selectCode();
+        announce('Copy did not work. The code is selected: press Ctrl+C, or Cmd+C on a Mac, to copy it.');
+      }
+
+      button.addEventListener('click', function () {
+        if (navigator.clipboard && window.isSecureContext) {
+          navigator.clipboard.writeText(code).then(copied, function () {
+            legacyCopy() ? copied() : failed();
+          });
+        } else {
+          legacyCopy() ? copied() : failed();
+        }
+      });
+    })();
+  </script>
+</body>
+</html>
