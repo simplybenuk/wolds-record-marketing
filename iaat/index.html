@@ -143,10 +143,10 @@
         <p class="lead">Prices are in GBP.</p>
 
         <!--
-          TODO(IAAT launch): replace each "£TBC" below with the annual price configured
-          in Stripe (STRIPE_PRICE_STARTER_YEARLY / STRIPE_PRICE_PRO_YEARLY) and the first-year
-          amount shown on a test-mode invoice with code IAAT applied.
-          Do not work these out from the monthly prices.
+          Annual prices come from Stripe (app /api/billing/prices, checked 25 Nov 2026):
+          Starter yearly £100.00, Pro yearly £199.00. First-year amounts are 50% of those.
+          Confirm them against a test-mode invoice with IAAT applied before launch.
+          Do not work annual prices out from the monthly prices.
         -->
         <div class="pricing-grid" role="list">
 
@@ -179,11 +179,11 @@
             <div class="pricing-card-header">
               <h3 id="plan-starter-name" class="plan-name">Starter, annual</h3>
               <div class="plan-price">
-                <span class="price-amount" data-iaat-price="starter-first-year">£TBC</span>
+                <span class="price-amount" data-iaat-price="starter-first-year">£50</span>
                 <span class="price-period">first year</span>
               </div>
               <p class="plan-tagline">
-                Then <span data-iaat-price="starter-annual">£TBC</span> a year, the full annual Starter price.
+                Then <span data-iaat-price="starter-annual">£100</span> a year, the full annual Starter price.
               </p>
             </div>
             <ul class="plan-features" aria-label="Starter annual plan features">
@@ -204,11 +204,11 @@
             <div class="pricing-card-header">
               <h3 id="plan-pro-name" class="plan-name">Pro, annual</h3>
               <div class="plan-price">
-                <span class="price-amount" data-iaat-price="pro-first-year">£TBC</span>
+                <span class="price-amount" data-iaat-price="pro-first-year">£99.50</span>
                 <span class="price-period">first year</span>
               </div>
               <p class="plan-tagline">
-                Then <span data-iaat-price="pro-annual">£TBC</span> a year, the full annual Pro price.
+                Then <span data-iaat-price="pro-annual">£199</span> a year, the full annual Pro price.
               </p>
             </div>
             <ul class="plan-features" aria-label="Pro annual plan features">

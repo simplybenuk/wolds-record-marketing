@@ -72,4 +72,4 @@ Suggested filenames (optional):
 - Do not link it from the main navigation or add it to any XML sitemap.
 - Do not disallow `/iaat/` in `robots.txt`: crawlers must fetch the page to see `noindex`.
 
-Before launch, replace each `£TBC` (search for `TODO(IAAT launch)`) with the annual prices configured in Stripe and the first-year amount shown on a test invoice with code `IAAT` applied.
+The annual prices on the page (Starter £100, Pro £199) come from Stripe through the app's `/api/billing/prices` endpoint. If the Stripe prices change, update the page. The first-year amounts are 50% of the annual price.
