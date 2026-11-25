@@ -63,3 +63,13 @@ Suggested filenames (optional):
 - `assets/wolds-dashboard.png`
 - `assets/wolds-records-illustration.png`
 - `assets/wolds-hero-illustration.png`
+
+## IAAT member-benefit page
+
+`/iaat/` is a direct-link page for IAAT members (issue #21). Keep it out of search:
+
+- It carries `<meta name="robots" content="noindex, follow">`. Keep that tag.
+- Do not link it from the main navigation or add it to any XML sitemap.
+- Do not disallow `/iaat/` in `robots.txt`: crawlers must fetch the page to see `noindex`.
+
+Before launch, replace each `£TBC` (search for `TODO(IAAT launch)`) with the annual prices configured in Stripe and the first-year amount shown on a test invoice with code `IAAT` applied.
